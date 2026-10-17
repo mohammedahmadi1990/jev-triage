@@ -16,6 +16,7 @@ out/
 
 ### Secrets ###
 .env
+http/http-client.private.env.json
 
 ### Python ###
 .venv/

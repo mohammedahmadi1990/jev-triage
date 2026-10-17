@@ -1,0 +1,26 @@
+POST https://api.typesafe.ai/v1/systemone
+Authorization: Bearer {{typesafeKey}}
+Content-Type: application/json
+
+{
+  "model": "jev-1.13.0",
+  "state": "3 Kartons beschädigt, 2 Artikel fehlen. Bitte prüfen.",
+  "questions": {
+    "category": { "type": "choice",
+      "instructions": "What kind of problem does this goods-receipt remark report? If several, pick the most severe: damage > wrong article > quantity > documents.",
+      "criteria": { "damage": "Goods or packaging are physically damaged",
+        "qty_mismatch": "Delivered quantity differs from the delivery note",
+        "wrong_article": "An article differs from what was ordered",
+        "missing_docs": "Delivery note or required documents are missing",
+        "ok": "No problem is reported" } },
+    "block": { "type": "noul",
+      "instructions": "The goods must be blocked from putaway until checked.",
+      "criteria": { "true": "Damage, wrong articles or safety concerns make putaway risky",
+        "false": "Goods can be stored; any issue is administrative only" } },
+    "severity": { "type": "score",
+      "instructions": "How serious is the reported problem for warehouse operations?",
+      "criteria": [ "Low: cosmetic or administrative, no action needed today",
+        "Medium: needs a check or supplier contact, goods partly usable",
+        "Critical: goods unusable, safety risk or customer order at risk" ] }
+  }
+}
