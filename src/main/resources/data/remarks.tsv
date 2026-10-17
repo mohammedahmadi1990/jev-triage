@@ -1,0 +1,201 @@
+id	split	lang	text	hazmat	valueEur	category	block	severity	tags
+r001	calib	en	Paperwork incomplete, PO number not stated.	false	2600	MISSING_DOCS	false	LOW	abbrev
+r002	test	de	Kein Schaden, keine Fehlmenge, Papiere vollständig.	false	8000	OK	false	LOW	negation
+r003	test	de	Ware entspricht nicht der Bestellung.	false	1200	WRONG_ARTICLE	true	MEDIUM	plain
+r004	calib	en	Label shows SKU 5521 but the box contains 5512.	false	2600	WRONG_ARTICLE	true	MEDIUM	indirect
+r005	calib	de	Kühlware angetaut, Temperaturlogger zeigt 12 °C.	false	4800	DAMAGE	true	CRITICAL	indirect
+r006	test	de	Karton 4 eingedrückt, Inhalt muss geprüft werden.	false	120	DAMAGE	true	MEDIUM	plain
+r007	test	de	3 Paletten zu viel geliefert.	false	120	QTY_MISMATCH	false	LOW	plain
+r008	test	de	CE-Konformitätserklärung fehlt.	false	8000	MISSING_DOCS	false	MEDIUM	plain
+r009	test	de	Ware kam mit Wasserschaden an, Etiketten unleserlich.	false	250	DAMAGE	true	MEDIUM	plain
+r010	test	de	Alles in Ordnung.	false	2600	OK	false	LOW	plain
+r011	test	de	Packliste fehlt, Inhalt nicht zuordenbar.	false	60	MISSING_DOCS	false	MEDIUM	plain
+r012	test	en	Checked and fine.	false	900	OK	false	LOW	plain
+r013	test	de	Gezählt und geprüft, keine Abweichung.	false	3500	OK	false	LOW	negation
+r014	test	en	Seal intact, temperature log within range.	false	2600	OK	false	LOW	indirect
+r015	test	en	CMR not signed by the driver.	false	250	MISSING_DOCS	false	LOW	abbrev,indirect
+r016	calib	en	Count is off: 96 instead of 100.	false	1200	QTY_MISMATCH	false	MEDIUM	indirect
+r017	test	en	No paperwork with the shipment.	false	250	MISSING_DOCS	false	LOW	plain
+r018	test	en	Entire shipment belongs to another customer.	false	4800	WRONG_ARTICLE	true	CRITICAL	plain
+r019	test	en	Weight on the scale is about 20 % below the delivery note.	false	650	QTY_MISMATCH	false	MEDIUM	indirect
+r020	calib	en	Hazardous aerosol cans received but not on order.	true	2400	WRONG_ARTICLE	true	CRITICAL	indirect
+r021	calib	de	Statt Edelstahlschrauben wurden verzinkte geliefert.	false	60	WRONG_ARTICLE	true	MEDIUM	indirect
+r022	calib	en	Dangerous goods declaration not provided.	true	2400	MISSING_DOCS	true	CRITICAL	plain
+r023	calib	de	Pal. 3 eingedr., 5 Stk. defekt	false	400	DAMAGE	true	MEDIUM	abbrev
+r024	test	en	Count matches the delivery note.	false	5200	OK	false	LOW	keyword_trap
+r025	test	de	Falsche Farbe: bestellt schwarz, geliefert weiß.	false	400	WRONG_ARTICLE	true	MEDIUM	indirect
+r026	test	en	All good.	false	5200	OK	false	LOW	plain
+r027	test	de	Position 3 wurde nicht geliefert.	false	120	QTY_MISMATCH	false	MEDIUM	indirect
+r028	test	de	Ware geprüft, passt.	false	900	OK	false	LOW	plain
+r029	test	en	Corner of the pallet broken off, goods intact.	false	2600	DAMAGE	false	LOW	cosmetic
+r030	calib	de	Bestellnummer fehlt auf dem Lieferschein.	false	1200	MISSING_DOCS	false	LOW	plain
+r031	calib	en	Right part number, wrong material grade (S235 instead of S355).	false	3500	WRONG_ARTICLE	true	MEDIUM	indirect
+r032	calib	de	Andere Größe als bestellt, M statt L.	false	8000	WRONG_ARTICLE	true	MEDIUM	indirect
+r033	calib	de	2 Artikel fehlen laut Lieferschein.	false	250	QTY_MISMATCH	false	MEDIUM	plain
+r034	calib	de	Falsche Art. + 2 Kartons fehlen	false	400	WRONG_ARTICLE	true	MEDIUM	multi,abbrev
+r035	calib	de	Falsches Modell, Kunde wartet dringend auf das richtige.	false	7500	WRONG_ARTICLE	true	CRITICAL	plain
+r036	test	de	Kartons vollständig, aber in jedem fehlt eine Packung.	false	250	QTY_MISMATCH	false	MEDIUM	indirect
+r037	calib	de	Lieferschein liegt nicht bei, Spediteur schickt ihn per Mail.	false	1200	MISSING_DOCS	false	LOW	plain
+r038	calib	de	Wie bestellt geliefert, keine Auffälligkeiten.	false	60	OK	false	LOW	plain
+r039	test	en	Outer box slightly scuffed, product inside fine.	false	250	DAMAGE	false	LOW	cosmetic
+r040	test	de	Eine Palette fehlt komplett.	false	8000	QTY_MISMATCH	false	MEDIUM	plain
+r041	calib	de	Etiketten korrekt, Ware vollständig.	false	900	OK	false	LOW	plain
+r042	calib	de	Teillieferung, Rest folgt laut Spediteur nächste Woche.	false	1200	QTY_MISMATCH	false	LOW	indirect
+r043	test	en	Expired batch shipped instead of the current one.	false	7500	WRONG_ARTICLE	true	CRITICAL	indirect
+r044	test	en	Material certificate missing for batch 2231.	false	650	MISSING_DOCS	false	MEDIUM	plain
+r045	calib	de	Kiste vom LKW gefallen, sieht äußerlich gut aus, Inhalt ungeprüft.	false	250	DAMAGE	true	MEDIUM	indirect
+r046	test	de	Überlieferung: 120 Stück statt 100.	false	8000	QTY_MISMATCH	false	LOW	plain
+r047	calib	de	Ware vollständig, Papiere fehlen komplett.	false	120	MISSING_DOCS	false	LOW	negation
+r048	calib	en	Whole shipment destroyed, unusable.	false	18500	DAMAGE	true	CRITICAL	plain
+r049	calib	en	No damage, no shortage, just no delivery note.	false	60	MISSING_DOCS	false	LOW	negation
+r050	test	en	Packaging ripped, a few items fell out and are scratched.	false	1800	DAMAGE	true	MEDIUM	plain
+r051	test	en	Driver was late but the goods are fine.	false	400	OK	false	LOW	distractor
+r052	calib	en	Overdelivery of 5 boxes.	false	400	QTY_MISMATCH	false	LOW	plain
+r053	calib	de	Zolldokumente fehlen, Ware aus Drittland.	false	1800	MISSING_DOCS	false	MEDIUM	plain
+r054	calib	mixed	Gerät beschädigt angekommen, damaged on arrival, please check	false	900	DAMAGE	true	MEDIUM	mixed
+r055	test	de	Vom Lieferanten falsch kommissioniert, 3 Positionen betroffen.	false	650	WRONG_ARTICLE	true	MEDIUM	plain
+r056	calib	de	Zertifikat 3.1 für die Charge fehlt.	false	400	MISSING_DOCS	false	MEDIUM	plain
+r057	calib	de	Glasflaschen zerbrochen, ganze Lage unbrauchbar.	false	7500	DAMAGE	true	CRITICAL	plain
+r058	test	de	Ursprungszeugnis fehlt.	false	60	MISSING_DOCS	false	MEDIUM	plain
+r059	calib	de	Alles da, nichts kaputt.	false	5200	OK	false	LOW	negation,keyword_trap
+r060	calib	en	Forklift damage to pallet 1, several boxes torn open.	false	400	DAMAGE	true	MEDIUM	plain
+r061	test	en	Partial delivery, backorder for the rest.	false	1200	QTY_MISMATCH	false	LOW	indirect
+r062	test	en	Sealed bags punctured, powder spilled inside the cartons.	false	900	DAMAGE	true	MEDIUM	indirect
+r063	calib	de	Prüfprotokoll für die Druckbehälter fehlt.	false	650	MISSING_DOCS	true	MEDIUM	plain
+r064	calib	en	Everything matches the PO.	false	120	OK	false	LOW	abbrev
+r065	calib	de	Gefahrgut geliefert, obwohl nicht bestellt!	true	2400	WRONG_ARTICLE	true	CRITICAL	plain
+r066	calib	de	Gewicht laut Waage 480 kg, laut Papieren 600 kg.	false	900	QTY_MISMATCH	false	MEDIUM	indirect
+r067	test	de	Nur 18 statt 20 Kartons geliefert.	false	5200	QTY_MISMATCH	false	MEDIUM	indirect
+r068	calib	en	Got the 24 V model, we need 12 V for the customer's line stop.	false	18500	WRONG_ARTICLE	true	CRITICAL	indirect
+r069	calib	en	Pallet arrived wet, cardboard soaked through.	false	5200	DAMAGE	true	MEDIUM	plain
+r070	test	de	Lieferschein fehlt, Ware sieht gut aus.	false	2600	MISSING_DOCS	false	LOW	plain
+r071	calib	de	Anzahl Packstücke stimmt, Inhalt pro Karton aber zu gering.	false	900	QTY_MISMATCH	false	MEDIUM	indirect
+r072	test	en	Product doesn't match the purchase order.	false	60	WRONG_ARTICLE	true	MEDIUM	plain
+r073	calib	en	Not what we ordered at all.	false	120	WRONG_ARTICLE	true	MEDIUM	plain
+r074	test	de	Ersatzartikel ohne Absprache geliefert.	false	650	WRONG_ARTICLE	true	MEDIUM	indirect
+r075	test	en	DN missing	false	250	MISSING_DOCS	false	LOW	abbrev
+r076	test	en	Received complete, no remarks.	false	3500	OK	false	LOW	plain
+r077	calib	en	Line 2 not shipped.	false	650	QTY_MISMATCH	false	MEDIUM	indirect
+r078	test	en	Frozen goods thawed, logger shows 8 °C for 6 hours.	false	4800	DAMAGE	true	CRITICAL	indirect
+r079	test	en	Items mixed up between two orders.	false	120	WRONG_ARTICLE	true	MEDIUM	plain
+r080	calib	en	Calibration certificates for the gauges are missing, the customer requires them.	false	3500	MISSING_DOCS	false	MEDIUM	plain
+r081	test	de	Bestellt war die 230-V-Version, geliefert die 110-V-Version.	false	1200	WRONG_ARTICLE	true	MEDIUM	indirect
+r082	calib	en	No damage, no shortage, documents complete.	false	900	OK	false	LOW	negation,keyword_trap
+r083	test	en	Delivered packs of 6 instead of packs of 12.	false	8000	QTY_MISMATCH	false	MEDIUM	indirect
+r084	test	en	Older firmware revision delivered than specified.	false	900	WRONG_ARTICLE	true	MEDIUM	indirect
+r085	test	en	Goods received in perfect condition.	false	1200	OK	false	LOW	plain
+r086	test	de	Begleitpapiere unvollständig.	false	3500	MISSING_DOCS	false	LOW	plain
+r087	calib	de	Motorbaugruppe mit Riss im Gehäuse, nicht einbaubar.	false	4800	DAMAGE	true	CRITICAL	indirect
+r088	calib	en	Received part 88-201 instead of 88-210.	false	1200	WRONG_ARTICLE	true	MEDIUM	indirect
+r089	test	de	Ware ok, nur ein Karton weniger als avisiert.	false	3500	QTY_MISMATCH	false	MEDIUM	indirect
+r090	test	de	Lieferung falsch und zudem beschädigt angekommen.	false	400	DAMAGE	true	MEDIUM	multi
+r091	calib	en	Size XL delivered, PO says S.	false	650	WRONG_ARTICLE	true	MEDIUM	indirect,abbrev
+r092	test	en	Wrong item delivered, ordered blue not red.	false	60	WRONG_ARTICLE	true	MEDIUM	plain
+r093	test	de	Bio-Ware bestellt, konventionelle geliefert.	false	8000	WRONG_ARTICLE	true	MEDIUM	indirect
+r094	calib	de	Keine Schäden, aber 4 Artikel fehlen.	false	1200	QTY_MISMATCH	false	MEDIUM	negation
+r095	test	de	Folie aufgerissen, zwei Kartons haben Löcher.	false	60	DAMAGE	true	MEDIUM	plain
+r096	test	de	Unterlieferung bei Artikel 3001, Nachlieferung angefragt.	false	2600	QTY_MISMATCH	false	MEDIUM	plain
+r097	test	en	Water damage on 3 boxes, paper inside soaked.	false	2600	DAMAGE	true	MEDIUM	plain
+r098	test	de	mengendifferenz bei pos 2 + 4	false	5200	QTY_MISMATCH	false	MEDIUM	spelling,abbrev
+r099	test	de	Lieferschein unleserlich, ist nass geworden.	false	8000	MISSING_DOCS	false	LOW	indirect
+r100	calib	en	Substituted brand without approval.	false	8000	WRONG_ARTICLE	true	MEDIUM	indirect
+r101	test	de	Statt 10 Rollen nur 1 Rolle angekommen.	false	8000	QTY_MISMATCH	false	MEDIUM	indirect
+r102	test	en	Wrong colour and two items missing.	false	5200	WRONG_ARTICLE	true	MEDIUM	multi
+r103	test	de	LS fehlt	false	400	MISSING_DOCS	false	LOW	abbrev
+r104	test	en	Certificate of conformity not included.	false	900	MISSING_DOCS	false	MEDIUM	plain
+r105	calib	en	Wrong items and half of them broken.	false	1200	DAMAGE	true	MEDIUM	multi
+r106	test	de	Ware vollständig und unbeschädigt.	false	120	OK	false	LOW	negation
+r107	test	de	lieferschien fehlt	false	5200	MISSING_DOCS	false	LOW	spelling
+r108	test	de	Keine Mängel festgestellt.	false	900	OK	false	LOW	negation
+r109	calib	de	Lieferung unvollständig.	false	3500	QTY_MISMATCH	false	MEDIUM	vague
+r110	test	de	LS und Ware stimmen überein.	false	900	OK	false	LOW	abbrev
+r111	calib	en	Delivery note missing, goods look fine.	false	5200	MISSING_DOCS	false	LOW	plain
+r112	test	en	Qty mismatch pos 1	false	120	QTY_MISMATCH	false	MEDIUM	abbrev
+r113	calib	de	Doppelt geliefert, gleiche Ware wie gestern nochmal.	false	8000	QTY_MISMATCH	false	LOW	indirect
+r114	calib	de	Es fehlen 200 Stück, Kunde braucht sie morgen früh.	false	12000	QTY_MISMATCH	false	CRITICAL	plain
+r115	test	de	Nur Rechnung dabei, kein Lieferschein.	false	2600	MISSING_DOCS	false	LOW	plain
+r116	calib	en	Dent in the housing of 2 pumps, function not tested.	false	650	DAMAGE	true	MEDIUM	plain
+r117	test	en	No issues found.	false	5200	OK	false	LOW	plain
+r118	calib	mixed	Lieferschein fehlt, no delivery note	false	1200	MISSING_DOCS	false	LOW	mixed
+r119	test	de	Lieferschein fehlt und 3 Kartons fehlen.	false	900	QTY_MISMATCH	false	MEDIUM	multi
+r120	test	en	Quantity and items verified, all correct.	false	1200	OK	false	LOW	keyword_trap
+r121	test	de	Kartons trocken und unbeschädigt trotz Regen.	false	8000	OK	false	LOW	negation
+r122	calib	en	Only the invoice came, no delivery note.	false	650	MISSING_DOCS	false	LOW	plain
+r123	test	de	3 Kartons beschädigt, 2 Artikel fehlen. Bitte prüfen.	false	2600	DAMAGE	true	MEDIUM	multi
+r124	calib	en	Packing list missing.	false	250	MISSING_DOCS	false	LOW	plain
+r125	calib	de	Displayglas bei 8 Tablets gesprungen, Rest ok.	false	400	DAMAGE	true	MEDIUM	indirect
+r126	test	de	Außenkarton leicht verschrammt, Inhalt einwandfrei.	false	1200	DAMAGE	false	LOW	cosmetic
+r127	calib	en	Received the same order twice.	false	5200	QTY_MISMATCH	false	LOW	indirect
+r128	calib	en	Delivered 40 pcs instead of 50.	false	1200	QTY_MISMATCH	false	MEDIUM	indirect
+r129	calib	de	Fahrer war spät, Ware aber einwandfrei.	false	5200	OK	false	LOW	distractor
+r130	test	de	Gefahrgutpapiere fehlen!	true	1500	MISSING_DOCS	true	CRITICAL	plain
+r131	calib	de	OK	false	3500	OK	false	LOW	plain
+r132	calib	de	Stretchfolie lose, Ware aber unbeschädigt.	false	3500	OK	false	LOW	negation
+r133	calib	de	Falscher Artikel geliefert, bestellt war 4711, gekommen ist 4712.	false	650	WRONG_ARTICLE	true	MEDIUM	plain
+r134	calib	de	Ware i.O.	false	1200	OK	false	LOW	abbrev
+r135	calib	de	Schrauben verrostet, Charge vermutlich unbrauchbar.	false	4800	DAMAGE	true	CRITICAL	indirect
+r136	calib	de	Ware nass angekommen, Kartons durchgeweicht.	false	650	DAMAGE	true	MEDIUM	plain
+r137	calib	de	Lack an mehreren Blechen zerkratzt, Kunde akzeptiert das evtl. nicht.	false	650	DAMAGE	true	MEDIUM	indirect
+r138	calib	en	Docs will be emailed by the carrier.	false	400	MISSING_DOCS	false	LOW	indirect
+r139	calib	en	Boxes are all there but each one is short one unit.	false	1200	QTY_MISMATCH	false	MEDIUM	indirect
+r140	test	de	Schaden an der Ware, Foto im Anhang.	false	3500	DAMAGE	true	MEDIUM	vague
+r141	calib	en	Packaging dry despite the rain, contents intact.	false	3500	OK	false	LOW	indirect
+r142	calib	mixed	5 Stück fehlen, Rest passt, 5 pcs missing	false	5200	QTY_MISMATCH	false	MEDIUM	mixed
+r143	calib	de	Menge geprüft: 50/50.	false	900	OK	false	LOW	indirect
+r144	calib	de	Artikelnummer auf dem Karton passt nicht zum LS.	false	1800	WRONG_ARTICLE	true	MEDIUM	abbrev,indirect
+r145	calib	en	Test report for the pressure vessels is missing.	false	1800	MISSING_DOCS	true	MEDIUM	plain
+r146	calib	en	Pallet tipped over during unloading, glassware shattered.	false	18500	DAMAGE	true	CRITICAL	indirect
+r147	test	en	No damage, just 6 pcs short.	false	5200	QTY_MISMATCH	false	MEDIUM	negation
+r148	test	de	Keine falschen Artikel, aber Lieferschein fehlt.	false	400	MISSING_DOCS	false	LOW	negation
+r149	calib	de	Lieferung ok, Menge stimmt.	false	2600	OK	false	LOW	plain
+r150	test	de	Falsche Charge geliefert, MHD zu kurz für den Kunden.	false	1800	WRONG_ARTICLE	true	MEDIUM	indirect
+r151	calib	mixed	alles ok, all good	false	8000	OK	false	LOW	mixed
+r152	test	en	Drum leaking, chemical smell in the trailer.	true	1500	DAMAGE	true	CRITICAL	plain
+r153	calib	en	Pallets stable, wrapping intact.	false	5200	OK	false	LOW	plain
+r154	calib	en	Short shipped by 2 cartons.	false	120	QTY_MISMATCH	false	MEDIUM	plain
+r155	calib	en	Delivered as ordered, no damage.	false	650	OK	false	LOW	negation
+r156	calib	en	Two cartons crushed on arrival, contents need inspection.	false	2600	DAMAGE	true	MEDIUM	plain
+r157	calib	de	Beschaedigte Verpackung bei 2 von 20 Kartons, Inhalt ok.	false	5200	DAMAGE	false	LOW	cosmetic,spelling
+r158	calib	en	Two pallets more than announced, no space left in the warehouse.	false	5200	QTY_MISMATCH	false	MEDIUM	indirect
+r159	test	en	Received 110 units, PO was 100.	false	3500	QTY_MISMATCH	false	LOW	indirect,abbrev
+r160	calib	en	Only half the order arrived, production needs it today.	false	12000	QTY_MISMATCH	false	CRITICAL	indirect
+r161	test	de	Fehlmenge 12 St.	false	120	QTY_MISMATCH	false	MEDIUM	abbrev
+r162	calib	en	missing 3 items, rest ok	false	400	QTY_MISMATCH	false	MEDIUM	plain
+r163	calib	de	Ohne Befund.	false	5200	OK	false	LOW	plain
+r164	calib	de	Eierpalette: ca. 30 % zerbrochen.	false	650	DAMAGE	true	MEDIUM	plain
+r165	test	de	Komplett falsche Lieferung, gehört zu einem anderen Kunden.	false	7500	WRONG_ARTICLE	true	CRITICAL	plain
+r166	test	en	One pallet missing from the delivery.	false	400	QTY_MISMATCH	false	MEDIUM	plain
+r167	calib	de	Pünktlich, vollständig, sauber.	false	250	OK	false	LOW	indirect
+r168	test	de	falsche ware, rücksendung nötig	false	60	WRONG_ARTICLE	true	MEDIUM	spelling
+r169	calib	de	Keine Papiere dabei.	false	60	MISSING_DOCS	false	LOW	plain
+r170	test	en	Customs documents missing.	false	400	MISSING_DOCS	false	MEDIUM	plain
+r171	test	en	SDS missing for the solvent drums.	true	3900	MISSING_DOCS	true	MEDIUM	abbrev
+r172	calib	en	dmgd ctns x3, pls chk	false	3500	DAMAGE	true	MEDIUM	abbrev
+r173	calib	de	Frachtbrief nicht unterschrieben.	false	120	MISSING_DOCS	false	LOW	indirect
+r174	calib	de	Verpackungseinheit falsch: 10er-Packs statt 50er-Packs, Artikelnummer weicht ab.	false	1800	WRONG_ARTICLE	true	MEDIUM	indirect
+r175	test	de	Sicherheitsdatenblatt nicht beigelegt.	true	3900	MISSING_DOCS	true	MEDIUM	plain
+r176	calib	de	Lieferung entspricht dem Lieferschein.	false	5200	OK	false	LOW	keyword_trap
+r177	test	mixed	wrng art, see LS	false	3500	WRONG_ARTICLE	true	MEDIUM	abbrev,mixed
+r178	test	de	Gelieferte Ware ist nicht in unserem Artikelstamm.	false	400	WRONG_ARTICLE	true	MEDIUM	indirect
+r179	calib	de	Keine Schäden, aber Lieferschein fehlt.	false	8000	MISSING_DOCS	false	LOW	negation
+r180	calib	en	Nothing broken, nothing missing.	false	8000	OK	false	LOW	negation,keyword_trap
+r181	calib	de	Menge stimmt nicht, 5 Stk zu wenig.	false	1200	QTY_MISMATCH	false	MEDIUM	abbrev
+r182	test	de	Gabelstaplerschaden an Palette 2, Ecke abgebrochen.	false	1800	DAMAGE	true	MEDIUM	indirect
+r183	test	de	Sack mit Granulat aufgeplatzt, ca. 5 kg verloren.	false	1200	DAMAGE	true	MEDIUM	multi,indirect
+r184	test	en	No discrepancies.	false	400	OK	false	LOW	negation
+r185	test	de	Palette gebrochen, Ware ist runtergefallen. Sichtprüfung nötig.	false	250	DAMAGE	true	MEDIUM	indirect
+r186	test	de	Keine Schäden erkennbar, alles in Ordnung.	false	5200	OK	false	LOW	negation
+r187	calib	de	ohne beanstandung	false	8000	OK	false	LOW	spelling
+r188	calib	de	Fässer verbeult, eins tropft leicht. Gefahrgut Klasse 3.	true	800	DAMAGE	true	CRITICAL	indirect
+r189	test	de	Palette umgekippt, Inhalt teilweise nicht mehr verwendbar.	false	120	DAMAGE	true	MEDIUM	indirect
+r190	calib	de	Artikel vertauscht: Pos. 1 und 2 verwechselt.	false	1200	WRONG_ARTICLE	true	MEDIUM	abbrev
+r191	test	en	ok, thx	false	400	OK	false	LOW	abbrev
+r192	test	de	Geliefert wurde die alte Version des Bauteils (Rev. B statt C).	false	250	WRONG_ARTICLE	true	MEDIUM	indirect
+r193	test	de	Kein Wiegeschein dabei.	false	8000	MISSING_DOCS	false	LOW	plain
+r194	calib	en	Nothing missing except the paperwork.	false	2600	MISSING_DOCS	false	LOW	negation
+r195	test	de	Kanister ausgelaufen, Flüssigkeit auf der Palette. Gefahrgut!	true	3900	DAMAGE	true	CRITICAL	plain
+r196	test	de	Gezählt 47, auf dem LS stehen 50.	false	60	QTY_MISMATCH	false	MEDIUM	indirect,abbrev
+r197	test	de	Kartons zerdrückt, Inhalt Elektronik, Funktion unklar.	false	2600	DAMAGE	true	MEDIUM	plain
+r198	calib	de	Etikett sagt Typ A, drin ist Typ B.	false	400	WRONG_ARTICLE	true	MEDIUM	indirect
+r199	calib	de	Abgelaufene Charge geliefert statt der aktuellen.	false	4800	WRONG_ARTICLE	true	CRITICAL	indirect
+r200	test	en	Screens cracked on 5 monitors.	false	1800	DAMAGE	true	MEDIUM	indirect
