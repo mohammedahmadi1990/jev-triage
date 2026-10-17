@@ -13,11 +13,6 @@ import java.util.Map;
 @Component
 public class JevClient {
 
-    private static final String CATEGORY = "What kind of problem does this goods-receipt remark report? "
-            + "If several, pick the most severe: damage > wrong article > quantity > documents.";
-    private static final String BLOCK = "The goods must be blocked from putaway until checked.";
-    private static final String SEVERITY = "How serious is the reported problem for warehouse operations?";
-
     private final RestClient rest;
     private final JevProperties props;
 
@@ -26,13 +21,17 @@ public class JevClient {
         this.props = props;
     }
 
+    /** v1 block criteria, used by the original benchmark run. */
     public TriageResult triage(String remark) {
+        return triage(remark, TriageCriteria.BLOCK, TriageCriteria.BLOCK_TRUE, TriageCriteria.BLOCK_FALSE);
+    }
+
+    /** Same request, with the block criteria passed in, so wording variants can be compared. */
+    public TriageResult triage(String remark, String blockStatement, String whenTrue, String whenFalse) {
         var questions = new LinkedHashMap<String, Object>();
-        questions.put("category", JevQuestions.choice(CATEGORY, Category.class));
-        questions.put("block", JevQuestions.noul(BLOCK,
-                "Damage, wrong articles or safety concerns make putaway risky",
-                "Goods can be stored; any issue is administrative only"));
-        questions.put("severity", JevQuestions.score(SEVERITY, Severity.class));
+        questions.put("category", JevQuestions.choice(TriageCriteria.CATEGORY, Category.class));
+        questions.put("block", JevQuestions.noul(blockStatement, whenTrue, whenFalse));
+        questions.put("severity", JevQuestions.score(TriageCriteria.SEVERITY, Severity.class));
 
         var body = Map.of("model", props.model(), "state", remark, "questions", questions);
 
@@ -59,7 +58,7 @@ public class JevClient {
         return new Decision<>(top, probs.get(top), a.confidence(), probs);
     }
 
-    private static <E extends Enum<E>> Decision<E> toScore(JevAnswer a, Class<E> type) {
+    private static <E extends Enum<E> & DecisionOption> Decision<E> toScore(JevAnswer a, Class<E> type) {
         E[] levels = type.getEnumConstants();                 // "0", "1", "2" map to enum order
         var probs = new EnumMap<E, Double>(type);
         for (int i = 0; i < levels.length; i++) {

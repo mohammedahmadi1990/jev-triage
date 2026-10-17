@@ -16,3 +16,7 @@ out/
 
 ### Secrets ###
 .env
+
+### Python ###
+.venv/
+__pycache__/

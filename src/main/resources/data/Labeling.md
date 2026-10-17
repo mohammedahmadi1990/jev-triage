@@ -29,6 +29,7 @@ All remarks are **synthetic**. No customer or company data is used. Labels were 
 
 - `true` for physical damage that makes putaway risky, wrong articles, and safety concerns.
 - `true` for missing **safety-relevant** documents (dangerous goods papers, safety data sheets, pressure-vessel test reports).
+- `true` when missing documents make it impossible to match the contents to order lines (the receipt cannot be booked).
 - `false` for cosmetic packaging damage, quantity differences and other administrative issues.
 
 ## Severity
@@ -40,3 +41,14 @@ All remarks are **synthetic**. No customer or company data is used. Labels were 
 ## Known bias
 
 The dataset was written **after** the rule baseline. Rows tagged `keyword_trap` deliberately contain rule keywords in a harmless context. Results for the rule baseline are therefore also reported without these rows.
+
+## Label revisions
+
+The first benchmark run (`results/benchmark-20261017-202326.tsv`) used the original labels (**v1**, commit `ca75392`). After that run, every row where both models disagreed with the label in the same direction was reviewed by hand (35 severity rows, 2 block rows). Most disagreements were kept because the rules above cover them and the models were simply stricter. Labels were changed only where the rule above was applied wrongly. Remark texts were not changed.
+
+Results are reported against both **v1** and **v2** (current `remarks.tsv`). To rebuild v1, apply the `v1` column below.
+
+| id | field | v1 | v2 | reason |
+| --- | --- | --- | --- | --- |
+| r011 | `block` | `false` | `true` | Contents can't be matched to order lines, so the receipt can't be booked. |
+| r031 | `severity` | `MEDIUM` | `CRITICAL` | Lower steel grade (S235 instead of S355) is a safety risk if installed. |

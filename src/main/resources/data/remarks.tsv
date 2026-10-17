@@ -9,7 +9,7 @@ r007	test	de	3 Paletten zu viel geliefert.	false	120	QTY_MISMATCH	false	LOW	plai
 r008	test	de	CE-Konformitätserklärung fehlt.	false	8000	MISSING_DOCS	false	MEDIUM	plain
 r009	test	de	Ware kam mit Wasserschaden an, Etiketten unleserlich.	false	250	DAMAGE	true	MEDIUM	plain
 r010	test	de	Alles in Ordnung.	false	2600	OK	false	LOW	plain
-r011	test	de	Packliste fehlt, Inhalt nicht zuordenbar.	false	60	MISSING_DOCS	false	MEDIUM	plain
+r011	test	de	Packliste fehlt, Inhalt nicht zuordenbar.	false	60	MISSING_DOCS	true	MEDIUM	plain
 r012	test	en	Checked and fine.	false	900	OK	false	LOW	plain
 r013	test	de	Gezählt und geprüft, keine Abweichung.	false	3500	OK	false	LOW	negation
 r014	test	en	Seal intact, temperature log within range.	false	2600	OK	false	LOW	indirect
@@ -29,7 +29,7 @@ r027	test	de	Position 3 wurde nicht geliefert.	false	120	QTY_MISMATCH	false	MEDI
 r028	test	de	Ware geprüft, passt.	false	900	OK	false	LOW	plain
 r029	test	en	Corner of the pallet broken off, goods intact.	false	2600	DAMAGE	false	LOW	cosmetic
 r030	calib	de	Bestellnummer fehlt auf dem Lieferschein.	false	1200	MISSING_DOCS	false	LOW	plain
-r031	calib	en	Right part number, wrong material grade (S235 instead of S355).	false	3500	WRONG_ARTICLE	true	MEDIUM	indirect
+r031	calib	en	Right part number, wrong material grade (S235 instead of S355).	false	3500	WRONG_ARTICLE	true	CRITICAL	indirect
 r032	calib	de	Andere Größe als bestellt, M statt L.	false	8000	WRONG_ARTICLE	true	MEDIUM	indirect
 r033	calib	de	2 Artikel fehlen laut Lieferschein.	false	250	QTY_MISMATCH	false	MEDIUM	plain
 r034	calib	de	Falsche Art. + 2 Kartons fehlen	false	400	WRONG_ARTICLE	true	MEDIUM	multi,abbrev

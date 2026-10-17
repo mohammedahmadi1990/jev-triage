@@ -65,7 +65,9 @@ public class LlmTriageClient {
             sb.append("- ").append(s.name()).append(": ").append(s.description()).append("\n");
         }
 
-        sb.append("\nFor each confidence and blockProbability field, give your probability (0 to 1) that the answer is correct.");
+        sb.append("\nblockProbability: your probability (0 to 1) that the goods must be blocked. ")
+                .append("It must be above 0.5 if block is true and below 0.5 if block is false.\n")
+                .append("categoryConfidence and severityConfidence: your probability (0 to 1) that that answer is correct.");
         return sb.toString();
     }
 
