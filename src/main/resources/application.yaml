@@ -1,7 +1,14 @@
+server.port: 8081
 spring:
   application:
     name: jev-triage
-server.port: 8081
+  config:
+    import: optional:file:.env[.properties]
+  ai:
+    anthropic:
+      api-key: ${ANTHROPIC_API_KEY}
+      chat:
+        model: claude-haiku-5-5
 
 jev:
   base-url: https://api.typesafe.ai
