@@ -24,7 +24,7 @@ Test split (100 remarks × 3 repeats), labels v2. Full output: [`analysis/final/
 
 What the numbers say:
 
-- **Categorization is solved** for both models on this dataset. The rules match only 36% of remarks.
+- **Categorization is solved** for both models on this dataset. The rules fire on only 36% of remarks and are right 81% of the time when they do. Their overall category accuracy of 41% also counts unmatched remarks, which default to `OK` and are therefore correct when the remark really reports no problem.
 - **The block decision is where they differ.** Rewording Jev's block criteria raised its accuracy from 72% to 85%. Combining Jev with one deterministic rule from master data (missing documents block only for hazardous goods) reached 97.0%, close to the LLM, at Jev's latency and without any LLM call. See section 11 of the analysis output.
 - **Jev is about 6–8× faster and about 9× cheaper** than Claude Haiku 5.5, a much smaller cost gap than often claimed, because Haiku 5.5 is inexpensive.
 
