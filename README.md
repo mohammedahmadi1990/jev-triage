@@ -8,7 +8,7 @@
 
 Each approach answers the same three questions for every remark: the **category** of the problem, whether the goods must be **blocked** from putaway, and the **severity**.
 
-This is the companion code for the article *[Do We Really Need an LLM for Every Decision? Testing Jev with Spring Boot](#)* by Mohammed Ahmadi.
+This is the companion code for the article *[Do We Really Need an LLM for Every Decision? Testing Jev with Spring Boot](https://medium.com/@mohammedahmadi/do-we-really-need-an-llm-for-every-decision-testing-jev-with-spring-boot-0ea9b6f4fb5e)* by Mohammed Ahmadi.
 
 ## Key results
 
@@ -56,14 +56,17 @@ src/main/java/org/ahmadi/jevtriage/
 ├── jev/          JevClient, request builders, response records
 ├── llm/          Spring AI client for Claude Haiku 5.5
 ├── rules/        keyword rule baseline
-└── benchmark/    strategies and the benchmark runner
+└── benchmark/    strategies, benchmark runner, side-by-side comparison
 src/main/resources/
 ├── application.yaml
 ├── application-smoke.yaml       smoke tests, no web server
+├── application-compare.yaml     side-by-side comparison, no web server
 ├── application-benchmark.yaml   benchmark runs, no web server
 └── data/
     ├── remarks.tsv              200 labeled synthetic remarks
     └── Labeling.md              labeling rules and revision log
+http/
+└── jev-request.http             raw Jev request for the IntelliJ HTTP client
 results/                         raw benchmark output (TSV)
 analysis/
 ├── analyze.py                   reproduces all tables and charts
@@ -82,7 +85,7 @@ Built with Spring Boot 4.1 and Spring AI 2.0.
 
 ## Setup
 
-Create a `.env` file in the project root. It is read by Spring and ignored by Git:
+Copy `.env.example` to `.env` in the project root and fill in your keys. The file is read by Spring and ignored by Git:
 
 ```
 TYPESAFE_API_KEY=your-jev-key
@@ -91,12 +94,26 @@ ANTHROPIC_API_KEY=your-anthropic-key
 
 Never commit this file. GitHub's push protection blocked a key in this very repository during development.
 
+For the raw request in `http/jev-request.http`, put the key in `http/http-client.private.env.json` (also ignored by Git) and select the `dev` environment in IntelliJ:
+
+```json
+{ "dev": { "typesafeKey": "your-jev-key" } }
+```
+
 ## Running
+
+The commands use `./gradlew` (Git Bash, macOS, Linux). In PowerShell, use `.\gradlew` instead.
 
 **Smoke tests:** a few calls per approach, printed to the console:
 
 ```bash
 ./gradlew bootRun --args='--spring.profiles.active=smoke'
+```
+
+**Side-by-side comparison:** one remark through every strategy, printed as a compact table:
+
+```bash
+./gradlew bootRun --args='--spring.profiles.active=compare'
 ```
 
 **Dry run of the benchmark:** 5 remarks, 1 repeat, a few seconds:
@@ -132,16 +149,18 @@ python -m venv .venv
 source .venv/bin/activate          # Windows: .\.venv\Scripts\Activate.ps1
 pip install -r analysis/requirements.txt
 
-python analysis/analyze.py \
-  results/benchmark-20261017-202326.tsv \
-  results/benchmark-20261017-211241.tsv \
-  --labels src/main/resources/data/remarks.tsv \
-  --out analysis/final
+python analysis/analyze.py results/benchmark-20261017-202326.tsv results/benchmark-20261017-211241.tsv --labels src/main/resources/data/remarks.tsv --out analysis/final
 ```
 
 `--labels` applies the current labels (v2). Leave it out to use the labels recorded at run time (v1).
 
-The script reports accuracy, latency, cost, calibration, repeat variance, results by language and tag, tuned block thresholds, severity confusion matrices, safe-automation policies, and the targeted block variants. It also draws three charts.
+The script reports accuracy, latency, cost, calibration, repeat variance, results by language and tag, tuned block thresholds, severity confusion matrices, safe-automation policies, and the targeted block variants. It also draws three charts:
+
+| File | Shows |
+| --- | --- |
+| `fig5_latency.png` | Latency per decision for each strategy, log scale |
+| `fig_block_calibration.png` | Stated P(block) against the share of cases that really needed a block |
+| `fig_coverage.png` | Best achievable automation coverage per error level |
 
 ## Dataset
 
